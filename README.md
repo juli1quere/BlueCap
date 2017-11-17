@@ -139,13 +139,9 @@ scanFuture.onFailure { [weak manager] error in
         return
     }
     switch appError {
-    case .invalidState:
-	break
     case .resetting:
         manager?.reset()
-    case .poweredOff:
-        break
-    case .unknown:
+    default:
         break
     }
 }
